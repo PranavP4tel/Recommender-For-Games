@@ -18,17 +18,13 @@ st.markdown("""This app allows you to get recommendations to the Steam titles th
 
 #Taking keyword to search news by
 st.text_input("Enter a title",key = "title")
-st.number_input('Enter number of recommendations', key = 'n_recommendations')
+st.number_input('Enter number of recommendations', key = 'n_recommendations', step = 1, min_value = 2, max_value = 50)
 
 #Button Click Definition
-if st.button("Search!"):
-    if st.session_state.n_recommendations >50:
-        st.write('Cannot recommend more than 50 games')
-
-    else:     
-        df = recommend_game(title = st.session_state.title, n_recommendations = st.session_state.n_recommendations)
+if st.button("Search!"):   
+    df = recommend_game(game_title = st.session_state.title, n_recommendations = st.session_state.n_recommendations)
         
-        if df is None:
-            st.write('Please provide some input!')
-        else:
-            st.dataframe(df)
+    if df is None:
+        st.write('Please provide some input!')
+    else:
+        st.dataframe(df)

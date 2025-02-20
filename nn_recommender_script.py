@@ -12,7 +12,7 @@ with open('tfidf_vectorizer.pkl', 'rb') as file:
 model = pickle.load(open('NN_Model.sav', 'rb'))
 
 # Function to get recommendations
-def recommend_game(game_title, n_recommendations=11):
+def recommend_game(game_title, n_recommendations):
     if game_title =='':
         return None
 

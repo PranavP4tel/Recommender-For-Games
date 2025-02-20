@@ -27,7 +27,7 @@ def recommender_distance(title, tfidf_gameid = tfidf_gameid, similarity='Cosine'
     if similarity =='Cosine':
         similarity_scores = cosine_similarity(tfidf_gameid[game_index], tfidf_gameid)
     
-    elif similarity == 'Manhattan Distance':
+    elif similarity == 'Manhattan':
         similarity_scores = manhattan_distances(tfidf_gameid[game_index], tfidf_gameid)
     
     else:
