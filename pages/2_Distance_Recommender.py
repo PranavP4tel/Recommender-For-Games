@@ -5,9 +5,6 @@ import sys
 sys.path.append('../ETDS Project')
 from distance_recommender_script import recommender_distance
 
-# Setting path to parent Folder
-sys.path.append('../ETDS Project')
-#from distance_recommender_script import recommend_game
 
 #Page config
 st.set_page_config(
@@ -20,7 +17,7 @@ st.markdown("""# Distance Based Recommender""")
 
 st.markdown("""This app allows you to get recommendations to the Steam titles that you provide or the filter selected. However, the articles may take some time to load, and the data is not up to date.""")
 
-#Taking keyword to search news by
+#Taking game title
 st.text_input("Enter a title",key = "title")
 
 st.selectbox(

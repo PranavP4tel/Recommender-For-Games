@@ -16,7 +16,7 @@ st.markdown("""# Nearest Neighbors Based Recommender""")
 
 st.markdown("""This app allows you to get recommendations to the Steam titles that you provide or the filter selected. However, the articles may take some time to load, and the data is not up to date.""")
 
-#Taking keyword to search news by
+#Taking game title
 st.text_input("Enter a title",key = "title")
 st.number_input('Enter number of recommendations', key = 'n_recommendations', step = 1, min_value = 2, max_value = 50)
 
