@@ -1,5 +1,5 @@
 numpy
 pandas
 thefuzz
-sklearn
+scikit-learn
 pickle
