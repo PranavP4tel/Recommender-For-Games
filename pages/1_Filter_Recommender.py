@@ -1,6 +1,6 @@
 import streamlit as st
 import sys
-
+from distance_recommender_script import df_recommender
 # Setting path to parent Folder
 sys.path.append('../ETDS Project')
 from filter_recommender_script import recommend_game
@@ -14,10 +14,10 @@ st.set_page_config(
 #Page data
 st.markdown("""# Filter System""")
 
-st.markdown("""This app allows you to get recommendations based on fuzzy searching on the game title entered by the user, along with the filters applied.""")
+st.markdown("""This app allows you to get recommendations based on fuzzy searching on the game title selected by the user, along with the filters applied.""")
 
 #Taking game title
-title = st.text_input("Enter the title of the game",key = "title")
+title = st.selectbox("Select a title", df_recommender['name_translated'] ,key = "title")
 
 #Creating 2 sections for user inputs
 col1, col2 = st.columns(2)
