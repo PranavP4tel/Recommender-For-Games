@@ -14,9 +14,6 @@ with open('tfidf_vectorizer.pkl', 'rb') as file:
 #Creating the function
 def recommender_distance(title, tfidf_gameid = tfidf_gameid, similarity='Cosine'):
     # Find the index of the game based on the title
-    if title =='':
-        return None
-    
     game_index = df_recommender.loc[df_recommender['name_translated'] == title].index
     
     if len(game_index) == 0:

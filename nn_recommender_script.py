@@ -13,9 +13,6 @@ model = pickle.load(open('NN_Model.sav', 'rb'))
 
 # Function to get recommendations
 def recommend_game(game_title, n_recommendations):
-    if game_title =='':
-        return None
-
     game_id = df_recommender.loc[df_recommender['name_translated'] == game_title].index[0]
     
     # Ensure the input matrix slice is 2D (one game, all features)
