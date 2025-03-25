@@ -2,14 +2,14 @@ import pandas as pd
 import numpy as np
 import pickle
 
-df_recommender = pd.read_csv('recommender_file_main.csv')
+df_recommender = pd.read_csv('./exports/recommender_file_main.csv')
 
 # Load the vectorizer using pickle
-with open('tfidf_vectorizer.pkl', 'rb') as file:
+with open('./exports/tfidf_vectorizer.pkl', 'rb') as file:
     tfidf_matrix = pickle.load(file)
 
 #Loading the model using pickle
-model = pickle.load(open('NN_Model.sav', 'rb'))
+model = pickle.load(open('./exports/NN_Model.sav', 'rb'))
 
 # Function to get recommendations
 def recommend_game(game_title, n_recommendations):

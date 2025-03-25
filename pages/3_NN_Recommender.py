@@ -4,9 +4,9 @@ import pandas as pd
 
 # Setting path to parent Folder
 sys.path.append('../ETDS Project')
-from nn_recommender_script import recommend_game
+from scripts.nn_recommender_script import recommend_game
 
-df_recommender = pd.read_csv('recommender_file_main.csv')
+df_recommender = pd.read_csv('./exports/recommender_file_main.csv')
 
 #Page config
 st.set_page_config(

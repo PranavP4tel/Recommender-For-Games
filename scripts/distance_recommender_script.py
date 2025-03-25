@@ -3,10 +3,10 @@ import numpy as np
 import pickle
 from sklearn.metrics.pairwise import cosine_similarity, euclidean_distances, manhattan_distances
 
-df_recommender = pd.read_csv('recommender_file_main.csv')
+df_recommender = pd.read_csv('./exports/recommender_file_main.csv')
 
 # Load the vectorizer using pickle
-with open('tfidf_vectorizer.pkl', 'rb') as file:
+with open('./exports/tfidf_vectorizer.pkl', 'rb') as file:
     tfidf_gameid = pickle.load(file)
 
 

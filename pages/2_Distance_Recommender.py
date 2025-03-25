@@ -4,9 +4,9 @@ import pandas as pd
 
 # Setting path to parent Folder
 sys.path.append('../ETDS Project')
-from distance_recommender_script import recommender_distance
+from scripts.distance_recommender_script import recommender_distance
 
-df_recommender = pd.read_csv('recommender_file_main.csv')
+df_recommender = pd.read_csv('./exports/recommender_file_main.csv')
 
 #Page config
 st.set_page_config(
@@ -19,6 +19,8 @@ st.set_page_config(
 st.markdown("""# Distance Based Recommender""")
 
 st.markdown("""This app allows you to get recommendations as the closest games to the one entered by the user, based on user selected similarity measure.""")
+
+st.markdown("The cosine similarity works best since it works very well on the sparse matrix created by the TF-IDF Vectorizer.")
 
 #Taking game title
 st.selectbox("Select a title", df_recommender['name_translated'] ,key = "title")

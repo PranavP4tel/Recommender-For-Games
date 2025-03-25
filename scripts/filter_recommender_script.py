@@ -5,7 +5,7 @@ from thefuzz import fuzz, process
 import numpy as np
 
 def recommend_game(title, category, genre):
-    df = pd.read_csv('Steam_Cleaned.csv')
+    df = pd.read_csv('./exports/Steam_Cleaned.csv')
     df.drop(columns = ['Unnamed: 0'], inplace = True)
     df = df.loc[df['steam_appid'] != 2639280]
     df.drop(columns = ['steam_appid','lang','name_translated', 'dev_translated', 'pub_translated', 'n_achievements','review_score','review_score_desc', 'positive_percentual','metacritic', 'is_free', ], inplace = True)

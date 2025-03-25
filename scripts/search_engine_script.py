@@ -6,24 +6,24 @@ import nltk
 import re
 nltk.download('stopwords')
 
-#Tasks to do
-#4. Order the pages properly.
-#5. Upload the cleaning files and the other Python Notebooks as well
-
-df_recommender = pd.read_csv('recommender_file_main.csv')
+df_recommender = pd.read_csv('./exports/recommender_file_main.csv')
 
 # Load the tokenized corpus from the file
-with open('tokenized_corpus.pkl', 'rb') as file:
+with open('./exports/tokenized_corpus.pkl', 'rb') as file:
     tokenized_corpus = pickle.load(file)
 
 #Setting stopwords to remove from the user input
 stopwords = set(stopwords.words('english'))
 
+#Loading the BM25 object from the file
+with open('./exports/bm25_model.pkl', 'rb') as file:
+    bm25 = pickle.load(file)
+
 def search_games(desc, values, n_recommends, df_recommender = df_recommender):
     min, max = values[0], values[1]
     
     #Initializing the engine
-    bm25 = BM25Okapi(tokenized_corpus)
+    #bm25 = BM25Okapi(tokenized_corpus)
 
     desc = desc.lower()
     desc = re.sub(r'http\S+', '', desc)  # Remove URLs

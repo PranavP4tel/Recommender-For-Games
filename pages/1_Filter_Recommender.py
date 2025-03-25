@@ -2,7 +2,7 @@ import streamlit as st
 import sys
 
 # Setting path to parent Folder
-sys.path.append('../ETDS Project')
+sys.path.append('../ETDS Project/scripts')
 from filter_recommender_script import recommend_game
 
 #Page config
